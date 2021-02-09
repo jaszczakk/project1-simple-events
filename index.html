@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+
+</head>
+<style>
+    button {
+        background-color: white;
+        box-shadow: 0 0 none;
+        width: 150px;
+        height: 50px;
+        border: none;
+        border-style: dashed;
+        border-width: 2.5px;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin: 0 auto;
+        display: block;
+        cursor: pointer;
+    }
+
+    div {
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        font-size: 15px;
+        margin: 5px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        line-height: 30px;
+        float: left;
+        border: 2px solid black;
+    }
+
+    .circle {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 50%;
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+
+    <button>Kliknij</button>
+
+    <script>
+
+        const buttonClick = document.querySelector("button")
+        let number = 1;
+
+        const addElement = function () {
+            const newDiv = document.createElement('div')
+            newDiv.textContent = number;
+            if (number % 5 == 0) {
+                newDiv.classList.add("circle")
+            }
+            document.body.appendChild(newDiv);
+            number++;
+        };
+
+        buttonClick.addEventListener("click", addElement);
+
+    </script>
+</body>
+
+</html>
