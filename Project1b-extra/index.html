@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+
+</head>
+<style>
+    .divisibleBy3 {
+        font-size: 25px;
+    }
+</style>
+
+<body>
+
+    <button>Dodaj element do listy</button>
+
+    <ul id="listOddNumbers">
+    </ul>
+
+
+    <script>
+        const btn = document.querySelector('button');
+        let number = 1;
+
+        const addList = function () {
+            const pointList = document.createElement('li');
+            const textList = document.createTextNode(number);
+            pointList.appendChild(textList);
+
+            if (number % 3 == 0) {
+                pointList.classList.add("divisibleBy3")
+            }
+
+            document.getElementById("listOddNumbers").appendChild(pointList);
+            number += 2;
+        };
+
+        btn.addEventListener("click", addList);    
+    </script>
+
+</body>
+
+</html>
