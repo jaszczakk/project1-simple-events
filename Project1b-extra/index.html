@@ -16,24 +16,25 @@
 
     <button>Dodaj element do listy</button>
 
-    <ul id="listOddNumbers">
+    <ul id="oddNumbersList">
     </ul>
-
 
     <script>
         const btn = document.querySelector('button');
         let number = 1;
 
         const addList = function () {
-            const pointList = document.createElement('li');
+            const listItem = document.createElement('li');
+            // listItem.innerText = number;
+            // listItem.textContent = number;
             const textList = document.createTextNode(number);
-            pointList.appendChild(textList);
+            listItem.appendChild(textList);
 
             if (number % 3 == 0) {
-                pointList.classList.add("divisibleBy3")
+                listItem.classList.add("divisibleBy3")
             }
 
-            document.getElementById("listOddNumbers").appendChild(pointList);
+            document.getElementById("oddNumbersList").appendChild(listItem);
             number += 2;
         };
 
